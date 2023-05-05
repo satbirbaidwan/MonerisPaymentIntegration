@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DustControl_TestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblMonerisTxnData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ResponseOrderID" Type="nvarchar" MaxLength="20" />
+          <Property Name="DateTime" Type="datetime" />
+          <Property Name="BankTransactionID" Type="nvarchar" MaxLength="50" />
+          <Property Name="ChargeTotal" Type="money" />
+          <Property Name="BankApprovalCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="ResponseCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="IsoCode" Type="nvarchar" MaxLength="10" />
+          <Property Name="Message" Type="nvarchar" MaxLength="1500" />
+          <Property Name="TransName" Type="nvarchar" MaxLength="15" />
+          <Property Name="CardHolder" Type="nvarchar" MaxLength="100" />
+          <Property Name="F414" Type="nvarchar" MaxLength="16" />
+          <Property Name="Card" Type="nvarchar" MaxLength="5" />
+          <Property Name="ExpiryDate" Type="nvarchar" MaxLength="4" />
+          <Property Name="Result" Type="int" />
+        </EntityType>
+        <EntityContainer Name="DustControl_TestModelStoreContainer">
+          <EntitySet Name="tblMonerisTxnData" EntityType="Self.tblMonerisTxnData" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DustControl_TestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="DustControl_Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblMonerisTxnDatas" EntityType="DustControl_TestModel.tblMonerisTxnData" />
+        </EntityContainer>
+        <EntityType Name="tblMonerisTxnData">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ResponseOrderID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
+          <Property Name="BankTransactionID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ChargeTotal" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="BankApprovalCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ResponseCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="IsoCode" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Message" Type="String" MaxLength="1500" FixedLength="false" Unicode="true" />
+          <Property Name="TransName" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="CardHolder" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="F414" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="Card" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+          <Property Name="ExpiryDate" Type="String" MaxLength="4" FixedLength="false" Unicode="true" />
+          <Property Name="Result" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DustControl_TestModelStoreContainer" CdmEntityContainer="DustControl_Entities">
+          <EntitySetMapping Name="tblMonerisTxnDatas">
+            <EntityTypeMapping TypeName="DustControl_TestModel.tblMonerisTxnData">
+              <MappingFragment StoreEntitySet="tblMonerisTxnData">
+                <ScalarProperty Name="Result" ColumnName="Result" />
+                <ScalarProperty Name="ExpiryDate" ColumnName="ExpiryDate" />
+                <ScalarProperty Name="Card" ColumnName="Card" />
+                <ScalarProperty Name="F414" ColumnName="F414" />
+                <ScalarProperty Name="CardHolder" ColumnName="CardHolder" />
+                <ScalarProperty Name="TransName" ColumnName="TransName" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="IsoCode" ColumnName="IsoCode" />
+                <ScalarProperty Name="ResponseCode" ColumnName="ResponseCode" />
+                <ScalarProperty Name="BankApprovalCode" ColumnName="BankApprovalCode" />
+                <ScalarProperty Name="ChargeTotal" ColumnName="ChargeTotal" />
+                <ScalarProperty Name="BankTransactionID" ColumnName="BankTransactionID" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="ResponseOrderID" ColumnName="ResponseOrderID" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

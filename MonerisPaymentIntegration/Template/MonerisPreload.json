@@ -1,0 +1,14 @@
+{
+  "store_id": "moneris",
+  "api_token": "hurgle",
+  "checkout_id": "chkt5BF66neris",
+  "txn_total": "452.00",
+  "environment": "qa",
+  "action": "preload",
+  "contact_details":{
+    "first_name": "bill",
+    "last_name": "smith",
+    "email": "test@moneris.com",
+    "phone": "4165551234"
+  }
+}
